@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+:root{
+    --higlight-normal: hsla(0, 0%, 100%, 0.706);
+    /*--highlight-hover: #ffcc84e4;*/
+    --highlight-hover: #84ff9fe4;
+}
+
+.shop1 {
+  position: absolute;
+  width: 36.45%;
+  top: 0;
+  right: 0;
+  z-index: 8;
+}
+
+.shop2 {
+  position: absolute;
+  width: 20.833%;
+  top: calc(396 *(100vw/1920));
+  right: calc(555 *(100vw/1920));
+  z-index: 7;
+}
+
+.palace-hitbox{
+    background-color: red;
+    z-index: 9;
+    width: 20%;
+    height: 30%;
+}
+
+.background-wrapper {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  z-index: 5;
+}
+
+.palace {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+@media (max-aspect-ratio: 1920/1080) {
+  .background-wrapper {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .background {
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: cover;
+  }
+
+  .palace {
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .shop1 {
+    height: 75.92%;
+    width: auto;
+    /*  
+                              image width     - visible width  */
+    right: calc(0px - (((100vh / 1080 * 1920) - 100vw) / 2));
+    top: 0;
+  }
+
+  .shop2 {
+    height: 32.4%;
+    width: auto;
+        top: calc(396 *(100vh/1080));
+        right: calc(( 555 * (100vh / 1080) ) -  (((100vh / 1080 * 1920) - 100vw) / 2));
+
+  }
+}
+
+.shop-highlight-right:hover {
+  -webkit-filter: drop-shadow(-20px -20px 10px #ff8c00e4);
+  filter: drop-shadow(-20px -20px 15px var(--highlight-hover));
+}
+
+/*.shop1:hover{
+    -webkit-filter: none;
+}*/
+
+.shop-highlight-right {
+  -webkit-filter: drop-shadow(-20px -20px 5px #ff8c00e4);
+  filter: drop-shadow(-10px -10px 5px var(--higlight-normal));
+}
+
+.shop-highlight-left:hover {
+    -webkit-filter: drop-shadow(20px 20px 10px #ff8c00e4);
+    filter: drop-shadow(20px 20px 15px var(--highlight-hover));
+}
+
+  
+.shop-highlight-left {
+    -webkit-filter: drop-shadow(20px 20px 5px #ff8c00e4);
+    filter: drop-shadow(10px 10px 5px var(--higlight-normal));
+}
