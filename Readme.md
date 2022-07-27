@@ -11,3 +11,5 @@ After that you need to install the dependencies with:
 Now you can start the server with:
 
 > node app.js
+
+You can access it on `localhost:3000`
